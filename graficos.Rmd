@@ -9,8 +9,8 @@ library(ggplot2)
 
 ```{r}
 library(ggplot2)
-data_elavorado <- read.csv("/Users/joseizammontt/Desktop/Universidad/master/thesis/codigo/Elavorados.csv", header=TRUE, stringsAsFactors=FALSE)
-View(data_elavorado)
+data_elaborado <- read.csv("/Users/joseizammontt/Desktop/Universidad/master/thesis/codigo/Elaborados.csv", header=TRUE, stringsAsFactors=FALSE)
+View(data_elaborado)
 ```
 
 ```{r}
@@ -36,58 +36,30 @@ graficar <- function(data,x, y1, y2) {
 ```
 
 ```{r}
-locales <- unique(data_elavorado[,c("COD_LOCALFISICO")])
+locales <- unique(data_elaborado[,c("DESC_LOCALFISICO")])
 
 ```
 
 ```{r}
-
 data_grafico <- data_elavorado %>%
-filter( COD_SKU==40252617, COD_LOCALFISICO==locales[1])
-
-graficar(data_grafico,data_grafico$SEMANA,data_grafico$PrecioSKU40252617,data_grafico$DEMANDA)
-
-data_grafico <- data_elavorado %>%
-filter( COD_SKU==40252617, COD_LOCALFISICO==locales[2])
-
-graficar(data_grafico,data_grafico$SEMANA,data_grafico$PrecioSKU40252617,data_grafico$DEMANDA)
-
-data_grafico <- data_elavorado %>%
-filter( COD_SKU==40252617, COD_LOCALFISICO==locales[3])
+  filter( COD_SKU==40252617, DESC_LOCALFISICO=="Angamos")
 
 graficar(data_grafico,data_grafico$SEMANA,data_grafico$PrecioSKU40252617,data_grafico$DEMANDA)
 
 ```
 
 ```{r}
-data_grafico <- data_elavorado %>%
-  filter( COD_SKU==40887920, COD_LOCALFISICO==locales[1])
-
-graficar(data_grafico,data_grafico$SEMANA,data_grafico$PrecioSKU40887920,data_grafico$DEMANDA)
 
 data_grafico <- data_elavorado %>%
-  filter( COD_SKU==40887920, COD_LOCALFISICO==locales[4])
-
-graficar(data_grafico,data_grafico$SEMANA,data_grafico$PrecioSKU40887920,data_grafico$DEMANDA)
-
-data_grafico <- data_elavorado %>%
-  filter( COD_SKU==40887920, COD_LOCALFISICO==locales[11])
+  filter( COD_SKU==40887920, DESC_LOCALFISICO=="Angamos")
 
 graficar(data_grafico,data_grafico$SEMANA,data_grafico$PrecioSKU40887920,data_grafico$DEMANDA)
 ```
+
+
 ```{r}
 data_grafico <- data_elavorado %>%
-  filter( COD_SKU==40905511, COD_LOCALFISICO==locales[1])
-
-graficar(data_grafico,data_grafico$SEMANA,data_grafico$PrecioSKU40905511,data_grafico$DEMANDA)
-
-data_grafico <- data_elavorado %>%
-  filter( COD_SKU==40905511, COD_LOCALFISICO==locales[2])
-
-graficar(data_grafico,data_grafico$SEMANA,data_grafico$PrecioSKU40905511,data_grafico$DEMANDA)
-
-data_grafico <- data_elavorado %>%
-  filter( COD_SKU==40905511, COD_LOCALFISICO==locales[3])
+  filter( COD_SKU==40905511, DESC_LOCALFISICO=="Angamos")
 
 graficar(data_grafico,data_grafico$SEMANA,data_grafico$PrecioSKU40905511,data_grafico$DEMANDA)
 ```
